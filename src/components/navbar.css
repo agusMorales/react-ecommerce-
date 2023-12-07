@@ -1,0 +1,101 @@
+.navbar{
+    background-color: #001428;
+    color: #c6c6c6;
+    padding: 2rem;
+    margin-bottom: 5rem;
+  }
+
+
+.dropdown-header{
+  background-color: #25619d;
+  color: #001428;
+  font-weight: bold;
+  transition: .5s;
+}
+
+
+
+
+body {
+  
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
+.contenedor-app {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+.item-list {
+  padding: 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+.item-list li {
+  background: #001428;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 10% / 50%;
+
+}
+
+#boton-carrito {
+  font-size: 2rem;
+  background: #FAC8CD;
+  border-radius: 2rem;
+}
+#root > div.css-172bykr {
+  background-color: #001428;
+  color: #c6c6c6;
+  margin-bottom: 1rem;
+}
+#menu-list-\:r3\: ,#menu-list-\:r4\: {
+  background-color: #f9fcff;
+}
+
+#menu-list-\:r3\:-menuitem-\:r5\:,
+#menu-list-\:r3\:-menuitem-\:r7\:,
+#menu-list-\:r3\:-menuitem-\:r9\:,
+#menu-list-\:r3\:-menuitem-\:rb\:,
+#menu-list-\:r3\:-menuitem-\:rd\: {
+  background-color: #f5faff;
+  color: #001428;
+  font-weight: bold;
+  transition: .5s;
+}
+
+#titulo-header {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
