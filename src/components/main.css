@@ -7,7 +7,7 @@
 
 
 .dropdown-header{
-  background-color: #25619d;
+  background-color: #ffffff;
   color: #001428;
   font-weight: bold;
   transition: .5s;
@@ -48,7 +48,6 @@ button:focus-visible {
 
 
 .contenedor-app {
-  text-align: center;
   width: 100vw;
   height: 100vh;
 }
@@ -70,32 +69,12 @@ button:focus-visible {
 
 }
 
-#boton-carrito {
-  font-size: 2rem;
-  background: #FAC8CD;
-  border-radius: 2rem;
-}
-#root > div.css-172bykr {
-  background-color: #001428;
-  color: #c6c6c6;
-  margin-bottom: 1rem;
-}
-#menu-list-\:r3\: ,#menu-list-\:r4\: {
-  background-color: #f9fcff;
+.buy{
+  color: #ffffff;
+  background-color:#01162c ;
 }
 
-#menu-list-\:r3\:-menuitem-\:r5\:,
-#menu-list-\:r3\:-menuitem-\:r7\:,
-#menu-list-\:r3\:-menuitem-\:r9\:,
-#menu-list-\:r3\:-menuitem-\:rb\:,
-#menu-list-\:r3\:-menuitem-\:rd\: {
-  background-color: #f5faff;
-  color: #001428;
-  font-weight: bold;
-  transition: .5s;
-}
-
-#titulo-header {
-  font-size: 1.5rem;
-  padding-right: 1rem;
+.addCart{
+  color: #ffffff;
+  background-color: #0b0909;
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-import CartWidget from './CartWidget';
-import { ChevronDownIcon, SettingsIcon } from '@chakra-ui/icons';
+import React from "react";
+import CartWidget from "./CartWidget";
+import { ChevronDownIcon, SettingsIcon } from "@chakra-ui/icons";
 import {
   Menu,
   MenuButton,
@@ -11,29 +11,28 @@ import {
   WrapItem,
   Avatar,
   Input,
-} from '@chakra-ui/react';
-import SearchBar from './SearchBar'; 
-import './navbar.css';
+} from "@chakra-ui/react";
+import SearchBar from "./SearchBar";
+import "../main.css";
 
-
-const NavBar = () => {
+const NavBar =  ({ usuario }) => {
   return (
     <>
       <Flex align="center" justify="space-between" className="navbar">
         <Menu>
-          <MenuButton fontSize={"1rem"} color={"#FFFFFF"} borderRadius={""}  >
+          <MenuButton fontSize={"1rem"} color={"#FFFFFF"} borderRadius={""}>
             Moviles
             <ChevronDownIcon boxSize={"1rem"} />
           </MenuButton>
           <MenuList className="dropdown-header">
-            <MenuItem >Smartphone</MenuItem>
-            <MenuItem >Tablets</MenuItem>
-            <MenuItem >Watches</MenuItem>
-            <MenuItem >Apps & Services</MenuItem>
+            <MenuItem>Smartphone</MenuItem>
+            <MenuItem>Tablets</MenuItem>
+            <MenuItem>Watches</MenuItem>
+            <MenuItem>Apps & Services</MenuItem>
           </MenuList>
         </Menu>
         <Menu>
-        <MenuButton fontSize={"1rem"} color={"#FFFFFF"} ml={"20"}  >
+          <MenuButton fontSize={"1rem"} color={"#FFFFFF"} ml={"20"}>
             Soporte
             <ChevronDownIcon boxSize={"1rem"} />
           </MenuButton>
@@ -43,8 +42,9 @@ const NavBar = () => {
             <MenuItem>Contáctanos</MenuItem>
             <MenuItem>Informacion Adicional</MenuItem>
           </MenuList>
-          </Menu>
+        </Menu>
         <SearchBar />
+        <Avatar src={usuario.avatar} title={usuario.nombre} alt={usuario.nombre} mr={10} />
         <CartWidget />
       </Flex>
     </>
