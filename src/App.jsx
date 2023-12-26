@@ -1,27 +1,26 @@
-import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
-import NavBar from "./components/navbar/navbar.jsx";
-import ItemListContainer from "./components/items/ItemListContainer.jsx";
+import React, { useState } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import CartWidget from './components/CartWidget';
 
 const App = () => {
-  // Datos para NavBar
-  const datosParaNavBar = {
-    usuario: {
-      nombre: "John Doe",
-      avatar: "https://media.a24.com/p/26c1256595f8044daa8e68b085d13912/adjuntos/296/imagenes/008/768/0008768607/1200x675/smart/naruto-netflixjpg.jpg",
-    },
-    categorias: ["Electrónica", "Ropa", "Hogar"],
-  };
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   return (
-    <>
-      <ChakraProvider>
-        <NavBar usuario={datosParaNavBar.usuario} />
-      </ChakraProvider>
-      <div className="contenedor-app">
-        <ItemListContainer />
-      </div>
-    </>
+    <ChakraProvider>
+      <BrowserRouter>
+        <NavBar onCategoryChange={(category) => setSelectedCategory(category)} />
+        <Routes>
+        <Route path="/" element={<ItemListContainer selectedCategory={selectedCategory} />} />
+          <Route path="/carrito" element={<CartWidget />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
   );
 };
 
