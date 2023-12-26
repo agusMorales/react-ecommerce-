@@ -1,11 +1,10 @@
 import React from 'react';
 import { Flex, Box, Spacer, Menu, MenuButton, MenuItem, MenuList, Avatar, Text } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';  // Cambia aquí de RouterLink a Link
 import CartWidget from './CartWidget';
 
 const NavBar = () => {
-  // Obtén las categorías de FakeStore
-  const fakeStoreCategories = ["electronics", "men's clothing", "jewelery", "women's clothing"];
+  const fakeStoreCategories = ["all", "electronics", "men's clothing", "jewelery", "women's clothing"];
 
   return (
     <>
@@ -17,7 +16,7 @@ const NavBar = () => {
           <MenuList>
             {fakeStoreCategories.map((category, index) => (
               <Link to={`/category/${category}`} key={index}>
-                <MenuItem color="#c6c6c6" fontWeight="bold">
+                <MenuItem color="#c666c6" fontWeight="bold">
                   {category}
                 </MenuItem>
               </Link>

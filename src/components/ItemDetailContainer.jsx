@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      {productoSeleccionado && <ItemDetail maceta={productoSeleccionado} />}
+      {productoSeleccionado && <ItemDetail productos={productoSeleccionado} />}
     </div>
   );
 };

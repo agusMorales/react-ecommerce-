@@ -10,7 +10,7 @@ const ItemCount = () => {
       
       <Alert status='success'>
         <AlertIcon />
-          Se han agregado {contador} macetas al carrito!
+          Se han agregado {contador} productos al carrito!
       </Alert>
 
     </Stack>
