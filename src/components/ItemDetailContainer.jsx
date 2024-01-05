@@ -1,32 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
+  const [item, setItem] = useState(null);
 
-  const [productos, setProductos] = React.useState([]);
-
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://fakestoreapi.com/products");
+        const response = await fetch("https://fakestoreapi.com/products/" + id);
         const data = await response.json();
-        setProductos(data);
+        setItem(data);
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error("Error fetching product details:", error);
       }
     };
 
     fetchData();
-  }, []);
-
-  const productoSeleccionado = productos.find((p) => p.id == id);
+  }, [id]);
 
   return (
     <div>
-            <ItemDetail productos={productoSeleccionado} />
-        </div>
+      {item && <ItemDetail item={item} />}
+    </div>
   );
 };
 
