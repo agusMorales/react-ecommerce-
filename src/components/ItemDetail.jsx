@@ -1,41 +1,32 @@
-import React from 'react';
-import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup } from '@chakra-ui/react';
-import ItemCount from './ItemCount';
-import { useParams } from 'react-router-dom';
+import React from 'react'
+import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Button } from '@chakra-ui/react'
+import ItemCount from './ItemCount'
 
-const ItemDetail = ({ product }) => {
-  const { id } = useParams();
 
+const ItemDetail = ( {item} ) => {
   return (
-    <Card maxW="sm">
-      <CardBody>
-        <Image
-          src={product.image}
-          alt={product.title}
-          borderRadius="lg"
-        />
-        <Stack mt="6" spacing="3">
-          <Heading size="md">{product.title}</Heading>
-          <Text>
-            Category: {product.category}
-            Id: {id}
-          </Text>
-          <Text>
-            {product.description}
-          </Text>
-          <Text color="blue.600" fontSize="2xl">
-            ${product.price}
-          </Text>
-        </Stack>
-      </CardBody>
-      <Divider />
-      <CardFooter>
-        <ButtonGroup spacing="2">
+    <div>
+      <Card maxW='sm'>
+        <CardBody>
+          <Stack mt='6' spacing='3'>
+            <Heading size='md' color='green'>
+              <img src={item.imagen} alt={item.nombre} />
+              <br />
+              <br />
+              <p>Producto: {item.nombre}</p>
+            </Heading>
+            <Text color='blue'>Categoría: {item.categoria}</Text>
+            <Text color='blue'>Descripción: {item.descripcion}</Text>
+            <Text color='blue'>Precio: ${item.precio}</Text>
+          </Stack>
+        </CardBody>
+        <CardFooter>
           <ItemCount />
-        </ButtonGroup>
-      </CardFooter>
-    </Card>
-  );
-};
+        </CardFooter>
+        <Divider />
+      </Card>
+    </div>
+  )
+}
 
 export default ItemDetail;

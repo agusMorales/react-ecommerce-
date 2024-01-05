@@ -1,48 +1,26 @@
-import {React, useEffect, useState } from 'react'
-import { Button, Stack, Alert, AlertIcon } from '@chakra-ui/react'
+import React from 'react'
+import { useState } from 'react'
+import { Button } from '@chakra-ui/react'
 
 const ItemCount = () => {
-
     const [contador, setContador] = useState(0)
-
-    const alertAgregadoAlCarrito = () => {
-    <Stack spacing={3}>
-      
-      <Alert status='success'>
-        <AlertIcon />
-          Se han agregado {contador} productos al carrito!
-      </Alert>
-
-    </Stack>
+    const mostrarMensaje = () => {
+        contador != 0 ? alert(`${contador} producto/s agregado/s al carrito de compras`) : alert(`Tienes ${contador} producto/s en tu lista`)
     }
-
-    const sumar = () => {
-      if (contador < 10) {
-        setContador(contador + 1)
-      } 
-    }
-
-    const restar = () => {
-      if (contador > 0) {
-        setContador(contador - 1)
-      } 
-    }
-
-  return (
-    <div>
-
-        <Button colorScheme='teal' size='xs' onClick = {restar}>-</Button>
-
-        <p>{contador}</p>
-
-        <Button colorScheme='teal' size='xs' onClick = {sumar}>+</Button>
-
-        <Button onClick = {alertAgregadoAlCarrito} >Agregar al carrito</Button>
-
-    </div>
+    const resta = () => contador > 0 && setContador(contador - 1)
 
 
-  )
+    const suma = () => contador < 10 && setContador(contador + 1)   
+    
+    return (
+        <div>
+            { contador > 0 ? <Button colorScheme='red' size='sm' onClick= {resta}>Quitar</Button> : <Button disabled>Quitar</Button>}
+            <Button colorScheme='blue' size='md' onClick={mostrarMensaje}>
+                Agregar al Carrito {contador}
+            </Button>
+            { contador < 10 ? <Button colorScheme='green' size='sm' onClick= {suma}>Agregar</Button> : <Button disabled>Agregar</Button>}
+        </div>
+    )
 }
 
-export default ItemCount
+export default ItemCount;

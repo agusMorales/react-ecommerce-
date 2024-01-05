@@ -25,8 +25,8 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      {productoSeleccionado && <ItemDetail productos={productoSeleccionado} />}
-    </div>
+            <ItemDetail productos={productoSeleccionado} />
+        </div>
   );
 };
 

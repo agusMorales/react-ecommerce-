@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CartWidget from './components/CartWidget';
 
+
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 

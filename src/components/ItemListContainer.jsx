@@ -40,15 +40,9 @@ const ItemListContainer = () => {
   console.log("Productos Filtrados:", productosFiltrados);
 
   return (
-    <Center>
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
-        {productosFiltrados.map((p, index) => (
-          <Box key={index}>
-            <ItemList title={p.title} description={p.description} price={p.price} />
-          </Box>
-        ))}
-      </SimpleGrid>
-    </Center>
+    <div>
+            <ItemList productos={productosFiltrados}/>
+        </div>
   );
 };
 
