@@ -17,8 +17,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<ItemListContainer selectedCategory={selectedCategory} />} />
           <Route path="/carrito" element={<CartWidget />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/category/:categoryId" element={<ItemListContainer selectedCategory={selectedCategory} />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

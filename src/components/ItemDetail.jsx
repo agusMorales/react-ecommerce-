@@ -1,16 +1,15 @@
-import React from 'react'
-import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, Button } from '@chakra-ui/react'
-import ItemCount from './ItemCount'
+import React from 'react';
+import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter } from '@chakra-ui/react';
+import ItemCount from './ItemCount';
 
-
-const ItemDetail = ( {item} ) => {
+const ItemDetail = ({ item }) => {
   return (
     <div>
       <Card maxW='sm'>
         <CardBody>
           <Stack mt='6' spacing='3'>
             <Heading size='md' color='green'>
-              <img src={item.imagen} alt={item.nombre} />
+              <img src={item.image} alt={item.nombre} />
               <br />
               <br />
               <p>Producto: {item.nombre}</p>
@@ -26,7 +25,7 @@ const ItemDetail = ( {item} ) => {
         <Divider />
       </Card>
     </div>
-  )
-}
+  );
+};
 
 export default ItemDetail;

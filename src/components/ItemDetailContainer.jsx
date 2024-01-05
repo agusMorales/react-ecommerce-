@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://fakestoreapi.com/products/" + id);
+        const response = await fetch(`https://fakestoreapi.com/products/${id}`);
         const data = await response.json();
         setItem(data);
       } catch (error) {
