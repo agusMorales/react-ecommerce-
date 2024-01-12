@@ -1,31 +1,45 @@
-import React from 'react';
-import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter } from '@chakra-ui/react';
+import React from 'react'
+import { Button, Box, Center } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import {useState , useContext} from 'react';
 import ItemCount from './ItemCount';
+import CartContext from '../context/CartContext';
 
-const ItemDetail = ({ item }) => {
-  return (
-    <div>
-      <Card maxW='sm'>
-        <CardBody>
-          <Stack mt='6' spacing='3'>
-            <Heading size='md' color='green'>
-              <img src={item.image} alt={item.nombre} />
-              <br />
-              <br />
-              <p>Producto: {item.nombre}</p>
-            </Heading>
-            <Text color='blue'>Categoría: {item.categoria}</Text>
-            <Text color='blue'>Descripción: {item.descripcion}</Text>
-            <Text color='blue'>Precio: ${item.precio}</Text>
-          </Stack>
-        </CardBody>
-        <CardFooter>
-          <ItemCount />
-        </CardFooter>
-        <Divider />
-      </Card>
-    </div>
-  );
-};
 
-export default ItemDetail;
+const ItemDetail = ({item}) => {
+    const {id, price, title, img} = item;
+    const [counter, setCounter] = useState(0);
+
+    const {addItem}= useContext(CartContext);
+
+
+
+    const onAdd = (count) => {
+      console.log(`Items  ${count}`);
+      setCounter(count)
+      addItem(item, count);
+
+
+    }
+  
+    return (
+
+      <Center py={12} style={{margin:"10px"}}>
+        <Box>
+          <h1 style={{marginLeft:"220px"}}>{title} - {id}</h1>
+          <img src={img}></img> 
+          <h2 style={{marginLeft:"320px"}}>{price}</h2> 
+          {counter !== 0 &&   //renderizado condicional
+            <Link to="/Cart"><Button  style={{marginLeft:"265px"}} >Finalizar compra</Button></Link>}
+            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+      
+        </Box>
+      </Center>
+
+    )
+  }
+  
+
+
+
+export default ItemDetail
