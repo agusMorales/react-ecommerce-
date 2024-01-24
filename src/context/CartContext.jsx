@@ -10,11 +10,11 @@ export const CartProvider= ({children}) =>{
     const addItem =(item, quantity) => {
         console.log({ ...item, quantity });
         if (isInCart(item.id)) {
-            let aux = items;  //copia del array
-            let itemIndex = aux.findIndex((element) => element.id === item.id);
+            let copItem = items;  //copia del array
+            let itemIndex = copItem.findIndex((element) => element.id === item.id);
             console.log(`Mi index es ${itemIndex}`);
-            aux[itemIndex].quantity += quantity;
-            setItems([...aux]);
+            copItem[itemIndex].quantity += quantity;
+            setItems([...copItem]);
         } else {
             setItems([...items, { ...item, quantity }]);
         }

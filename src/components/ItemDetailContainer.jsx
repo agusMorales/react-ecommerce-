@@ -1,30 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react'
+import {useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 import ItemDetail from './ItemDetail';
-import { useParams } from 'react-router-dom';
+import {doc, getDoc, getFirestore} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
-  const { id } = useParams();
-  const [item, setItem] = useState(null);
+  const {id} =useParams();
+  const [item, setItem] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-        const data = await response.json();
-        setItem(data);
-      } catch (error) {
-        console.error("Error fetching product details:", error);
+    const db = getFirestore()
+    const oneItem = doc(db,'ropa',`${id}`)
+    getDoc(oneItem).then((snapshot)=>{
+
+      if (snapshot.exists()){
+        const doc= snapshot.data()
+      console.log();
+      setItem(doc)
       }
-    };
+    })
+  },[])
 
-    fetchData();
-  }, [id]);
+return (
+  <div>
+    <ItemDetail item={item}/>
+  </div>
 
-  return (
-    <div>
-      {item && <ItemDetail item={item} />}
-    </div>
-  );
-};
+)
+}
 
-export default ItemDetailContainer;
+
+
+export default ItemDetailContainer
