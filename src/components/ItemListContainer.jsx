@@ -6,7 +6,7 @@ import { getFirestore, collection, getDocs, query, where } from 'firebase/firest
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const { categoryid } = useParams();
+  const { marcaid } = useParams();
   
   useEffect(() => {
     const fetchData = async () => {
@@ -15,11 +15,11 @@ const ItemListContainer = () => {
 
       let itemsData;
 
-      if (categoryid === undefined) {
+      if ( marcaid === "all") { // Modificación aquí
         const snapshot = await getDocs(itemsCollection);
         itemsData = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       } else {
-        const categoryQuery = query(itemsCollection, where('marca', '==', categoryid));
+        const categoryQuery = query(itemsCollection, where('marca', '==', marcaid));
         const snapshot = await getDocs(categoryQuery);
         itemsData = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       }
@@ -28,7 +28,7 @@ const ItemListContainer = () => {
     };
 
     fetchData();
-  }, [categoryid]);
+  }, [marcaid]);
 
   return (
     <div>

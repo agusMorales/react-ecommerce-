@@ -18,9 +18,9 @@ const ItemDetail = ({ item }) => {
 
   return (
     <Center py={12}>
-      <Box textAlign="center">
+      <Box textAlign="center"  border="1px"  borderColor="#001428"  borderWidth="3px"boxShadow="md" borderRadius="20px">
         <Heading as="h1">{title} - {id}</Heading>
-        <Image src={img} alt={title} mt={4} />
+        <Image src={img} alt={title} mt={4} maxW="50%" maxH="60%" mx="auto" />
         <Heading as="h2" mt={4}>Precio: {price}</Heading>
         {counter !== 0 && (
           <Link to="/Cart">

@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <ChakraProvider>
-      <CartProvider>
+      <CartProvider>fg
         <BrowserRouter>
           <NavBar onMarcaChange={handleMarcaChange} />
           <Routes>
@@ -29,7 +29,7 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/cart/form" element={<Form />} />
             <Route
-              path="/marca/:marcaId"
+              path="/marca/:marcaid"
               element={<ItemListContainer selectedMarca={selectedMarca} />}
             />
             <Route path="/item/:id" element={<ItemDetailContainer />} />

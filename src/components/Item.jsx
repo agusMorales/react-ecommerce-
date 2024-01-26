@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Item = ({ id, title, price, img }) => {
   return (
-    <Card maxW="250px" h="400px" border="1px" borderColor="gray.200" display="flex" flexDirection="column" justifyContent="space-between">
+    <Card maxW="250px" h="400px" border="1px"  borderColor="#001428"  borderWidth="3px" display="flex" flexDirection="column" justifyContent="space-between" boxShadow="md">
       <CardBody textAlign="center">
         <Stack mt="4" spacing="3">
           <Heading size="md" color="green" fontSize="sm" noOfLines={2} overflow="hidden">
