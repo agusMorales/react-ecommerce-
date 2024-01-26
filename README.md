@@ -23,7 +23,7 @@ Item: Componente que muestra un artículo específico con detalles.
 ItemDetailContainer: Componente que muestra detalles específicos de un artículo.
 ItemDetail: Componente que muestra los detalles de un artículo en particular.
 Cart: Componente que muestra el carrito de compras.
-CheckoutForm: Componente que muestra el formulario de checkout para finalizar la compra.
+Form: Componente que muestra el formulario  para finalizar la compra.
 context: Contiene el contexto de la aplicación, como el contexto del carrito.
 firebase: Contiene la configuración de Firebase y funciones de interacción con la base de datos.
 App.js: Archivo principal que contiene la lógica de enrutamiento y la estructura general de la aplicación.
