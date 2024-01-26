@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 - ![GIF](https://github.com/agusMorales/react-ecommerce-/assets/108914743/3461c8c5-1a77-4a3b-8d96-fd664676f6d4)
 
 
-Ecommerce de Ropa - README
+Ecommerce de Ropa 
 Este repositorio contiene el código fuente . El proyecto está construido utilizando React.js y Firebase como base de dato, se proporciona una descripción detallada de la estructura y las principales características del proyecto.
 
 Estructura del Proyecto
